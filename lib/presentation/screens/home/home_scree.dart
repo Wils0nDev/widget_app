@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,10 +42,7 @@ class _HomeView extends StatelessWidget {
 class _CustomListTitle extends StatelessWidget {
 
   final MenuItem menuItem;
-  const _CustomListTitle({
-    super.key,
-    required this.menuItem,
-  });
+  const _CustomListTitle({ required this.menuItem,  });
   
   @override
   Widget build(BuildContext context) {
@@ -58,6 +56,13 @@ class _CustomListTitle extends StatelessWidget {
       trailing: Icon(Icons.arrow_forward_ios_rounded,color: colors.primary,),
       onTap: () {
         //aqui navegamos a otras pantallas
+      //   Navigator.of(context).push(
+      //   MaterialPageRoute(
+      //     builder: (context) => const ButtonsScreen(),
+      //   ),
+      // );
+      //Navigator.pushNamed(context, menuItem.link);
+      context.push(menuItem.link);
       },
     );
   }
