@@ -10,10 +10,14 @@ class MainApp extends StatelessWidget {
   const MainApp({super.key});
   @override
   Widget build(BuildContext context) {
+    //.router : nos permite llamar a nuestro en rutador de rutas, esto nos proporciona la libreria go_router
     return  MaterialApp.router(
+      //routerConfig: me permite configurar mis enrutadores
+      //appRouter : Es mi enrutador donde defino los paths
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 6).getTheme(),
+      //AppTheme : clase que contiene la configuración base de mi app
+      theme: AppTheme(selectedColor: 3).getTheme(),
     );
   }
 }
